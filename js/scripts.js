@@ -1,22 +1,21 @@
-var symbols = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"];
-var numbersArray = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000];
+var symbols = [["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"],
+              ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "LC"],
+              ["", "C", "CC", "CCC", "DC", "D", "DC", "DCC", "DCCC", "CM" ],
+              ["", "M", "MM", "MMM"]];
 
 
-var romanNumeral = function (numbers) {
-  var romanNumber = "";
-  if (!numbers || numbers <= 0 || numbers >=4000) {
-    return alert("enter a number");
+function romanNumerals(number){
+  if (number > 0 || number <4000) {
+    var numeral = "";
+    var numberInput = number.split('').reverse();
+      for (var i =0; i < numberInput.length; i++) {
+      var roman = symbols[i];
+      var numeral = roman[(numberInput[i])] + numeral;
+  } return numeral;
   } else {
-  for (i = 0; i < numbersArray.length; i++) {
-      if (numbers === numbersArray[i]) {
-      return symbols[i];
-      }
-    }
+    return alert("enter a number greater than 0 and less than 4,000");
   }
 }
-
-
-
 
 
 
@@ -24,8 +23,41 @@ var romanNumeral = function (numbers) {
 $(document).ready(function(){
   $("form#roman").submit(function(event){
     event.preventDefault();
-    var numbers = parseInt($("input#number").val());
-    var result = romanNumeral(numbers);
+    var numbers = $("input#number").val();
+    var result = romanNumerals(numbers);
     $("#output").text(result);
   });
 });
+
+
+
+
+
+////BAD CODE
+//
+// var romanNumeral = function (numbers) {
+//   var romanNumber = "";
+//   if (!numbers || numbers <= 0 || numbers >= 4000) {
+//     return alert("enter a number greater than 0 and less than 4,000");
+//   } else {
+//   for (i = 0; i < numbersArray.length; i++) {
+//       if (numbers === numbersArray[i]) {
+//       return symbols[i];
+//       }
+//     }
+//   }
+// }
+
+
+//   var romanNumber = ""
+//   if (!numbers || numbers <= 0 || numbers >= 4000) {
+//     return alert("enter a number greater than 0 and less than 4,000");
+//   } else {
+//   for (i = 0; i < numbersArray.length; i++) {
+//       if (numbers === numbersArray[i]) {
+//       return symbols[i];
+//       }
+//       // var finalNumber = romanNumber.push([firstNumber + secondNumber + thirdNumber lastNumber]);
+//     }
+//   }
+// }
