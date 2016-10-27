@@ -16,20 +16,17 @@ M       1,000
 
 Specs:
 
-1) The program will do nothing to non-numerical characters.
-Example Input: blah Example Output: blah
-
-2) The program will translate 1 to symbol I and return the symbol as output.
+1) The program will translate 1 to symbol I and return the symbol as output.
 Example Input: 1 Example Output: I
 
-3) The program will translate 1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900 and 1,000 to the corresponding symbols (I, V, X, L, C, D, M, respectively).
-Example Input: 5 Example Output: V
+2) The program will translate numbers with 2 digits into symbols (I, V, X, L, C, D, M, respectively).
+Example Input: 15 Example Output: XV
 
-4) The program will add the symbols together up to three times.
-Example Input: 3 Example output: III
+3) The program will translate numbers with 3 digits into symbols (I, V, X, L, C, D, M, respectively).
+Example Input: 345 Example output: CCCXLV
 
-5) Once the program has 3 of the same symbol the next iteration will subtract two of the current symbol and add the next symbol in the array to the end.
-Example Input: 4 Example Output: IV
+4) The program will translate numbers with 4 digits into symbols (I, V, X, L, C, D, M, respectively).
+Example Input: 2834 Example output: MMDCCCXXXIV
 
 6) The program will do nothing to non-numerical characters.
 Example Input: blah Example Output: blah
