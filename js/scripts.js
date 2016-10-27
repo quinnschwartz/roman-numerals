@@ -9,7 +9,7 @@ function romanNumerals(number){
     var numeral = "";
     var numberInput = number.split('').reverse();
       for (var i =0; i < numberInput.length; i++) {
-      var roman = symbols[i];
+      var roman = symbols[i]; 
       var numeral = roman[(numberInput[i])] + numeral;
   } return numeral;
   } else {
